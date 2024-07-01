@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      li {
+        margin-bottom: 10px;
+        font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+      }
+
+      li button {
+        font-size: 12px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>Simple To-Do List</h1>
+
+    <div class="components">
+      <label for="item">Enter Task:</label>
+      <input type="text" name="item" id="item">
+      <button>Add Task</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+
+      const ul = document.querySelector("ul");
+      const input = document.querySelector("input");
+      const button = document.querySelector("button");
+
+      input.addEventListener("keypress", function(event) {
+        if (event.key == "Enter") {
+          event.preventDefault();
+          button.click();
+        }
+      });
+
+      button.addEventListener("click", () => {
+        const value = input.value;
+        input.value = '';
+
+        const li = document.createElement("li");
+        const span = document.createElement("span");
+        const buttons = document.createElement("div");
+        buttons.className = "buttonDiv";
+        const button2 = document.createElement("button");
+        const button3 = document.createElement("button");
+        buttons.appendChild(button3);
+        buttons.appendChild(button2);
+        li.appendChild(buttons);
+        li.appendChild(span);
+
+        span.textContent = value;
+        button2.textContent = 'Cross-off';
+        button3.textContent = 'Delete';
+        ul.appendChild(li);
+
+        let inCrossMode = true;
+        button2.addEventListener("click", () => {
+          if (inCrossMode == true) {
+            span.style = "text-decoration: line-through;"
+            inCrossMode = false;
+            button2.textContent = 'Undo Cross-off';
+          }
+          else if (inCrossMode == false) {
+            span.style = "text-decoration: none;"
+            inCrossMode = true;
+            button2.textContent = 'Cross-off';
+          }
+        });
+
+        button3.addEventListener("click", () => {
+          li.remove();
+        });
+
+        input.focus();
+
+      });
+
+    </script>
+  </body>
+</html>

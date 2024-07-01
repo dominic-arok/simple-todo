@@ -1,0 +1,65 @@
+html, body {
+    margin: 0;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    background: #734f96;
+    height: 100px;
+    margin-top: 0;
+    align-items: center;
+    color: white;
+    font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+}
+
+.components {
+    display :flex;
+    justify-content: center;
+    gap: 10px;
+    font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+    margin-bottom: 25px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+}
+
+button {
+    font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+}
+
+button:hover {
+    background-color: #734f96;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+input[type=text] {
+    color: #734f96;
+  }
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    list-style-type: none;
+    gap: 20px;
+    /*   The cross-out button and delete button for each task should be aligned with each other, 
+    but the lists are left-flushed so we must reverse the direction of the list with the next line   */
+    direction:rtl
+}
+
+li {
+    display: flex;
+    gap: 75px;
+    width: 350px;
+}
+
+.buttonDiv {
+    display: flex;
+    gap: 0;
+}
