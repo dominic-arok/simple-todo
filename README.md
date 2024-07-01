@@ -1,0 +1,1 @@
+This is a simple todo list app created with html, css, and javascript. It has a modern look and can add tasks, cross-out tasks, undo cross-outs, and delete tasks. It was created to practice and apply my html, css, and javascript skills.
